@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notification Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .phone-container {
+            width: 375px; /* Ancho de un iPhone X */
+            height: 812px; /* Alto de un iPhone X */
+            border: 16px solid black;
+            border-radius: 36px;
+            overflow: hidden;
+            position: relative;
+            background: white;
+            margin: 50px auto;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            overflow-y: auto;
+            background: white;
+        }
+        .phone-notch {
+            width: 60%;
+            height: 30px;
+            background: black;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 0 0 20px 20px;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="phone-container">
+        <div class="phone-notch"></div>
+        <div class="phone-screen">
+            <div class="flex-1 p-4 mt-8">                
+                <div class="space-y-4">
+                    <div class="border rounded-lg p-4">
+                        <h2 class="font-bold text-lg">Falta subir guia de entrega</h2>
+                        <p class="text-sm">Aún no has subido la guía de entrega para el servicio del cliente.</p>
+                        <div class="flex gap-2">
+                            <p class="text-sm mt-2 font-bold">Recojo</p>
+                            <p class="text-sm mt-2">Hoy: 16:00 - 17:00 p. m.</p>
+                        </div>
+                    </div>
+                    <div class="border rounded-lg p-4">
+                        <h2 class="font-bold text-lg">Servicio pendiente de confirmar</h2>
+                        <p class="text-sm">Tienes pendiente por confirmar el servicio de cliente.</p>
+                        <div class="flex gap-2">
+                            <p class="text-sm mt-2 font-bold">Recojo</p>
+                            <p class="text-sm mt-2">Hoy: 16:00 - 17:00 p. m.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t p-4 flex justify-around  border-t absolute bottom-0 w-full bg-white">
+                <a href="/pickup.html">
+                    <div class="flex flex-col items-center">
+                        <i class="fas fa-list"></i>
+                        <span class="text-xs">Servicios</span>
+                    </div>
+                </a>
+                <div class="flex flex-col items-center text-blue-600">
+                    <i class="fas fa-envelope"></i>
+                    <span class="text-xs">Comunicados</span>
+                </div>
+                <a href="/history.html">
+                    <div class="flex flex-col items-center">
+                        <i class="fas fa-history"></i>
+                        <span class="text-xs">Historial</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

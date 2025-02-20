@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mockup Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .phone-container {
+            width: 375px; /* Ancho de un iPhone X */
+            height: 812px; /* Alto de un iPhone X */
+            border: 16px solid black;
+            border-radius: 36px;
+            overflow: hidden;
+            position: relative;
+            background: white;
+            margin: 50px auto;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            overflow-y: auto;
+            background: white;
+        }
+        .phone-notch {
+            width: 60%;
+            height: 30px;
+            background: black;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 0 0 20px 20px;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="flex justify-center">
+        <div class="phone-container">
+            <div class="phone-notch"></div>
+            <div class="phone-screen">                   
+    
+                <!-- Main Content -->
+                <div class="flex-grow px-4 space-y-4 mt-8">
+                    <div class="border-2 border-black rounded-lg p-4 flex justify-between items-center">
+                        <div>
+                            <div class="font-bold text-lg">Hotel Britania</div>
+                            <div class="text-sm">25/12/2024 10:00</div>
+                        </div>
+                        <div class="text-sm">Entregado al cliente</div>
+                    </div>
+                    <div class="border-2 border-black rounded-lg p-4 flex justify-between items-center">
+                        <div>
+                            <div class="font-bold text-lg">Hotel Thiana</div>
+                            <div class="text-sm">28/12/2024 16:00</div>
+                        </div>
+                        <div class="text-sm">Entregado al cliente</div>
+                    </div>
+                    <div class="border-2 border-black rounded-lg p-4 flex justify-between items-center">
+                        <div>
+                            <div class="font-bold text-lg">Clinica Marbella</div>
+                            <div class="text-sm">30/12/2024 16:00</div>
+                        </div>
+                        <div class="text-sm">Entregado al cliente</div>
+                    </div>
+                </div>
+    
+                <!-- Bottom Navigation -->
+                <div class="border-t-2 border-black flex justify-around items-center p-4 absolute bottom-0 w-full">
+                    <a href="/pickup.html">
+                        <div class="flex flex-col items-center">
+                            <i class="fas fa-list"></i>
+                            <div class="text-xs">Servicios</div>
+                        </div>
+                    </a>
+                    <a href="notifications.html">
+                        <div class="flex flex-col items-center">
+                            <i class="fas fa-envelope text-xl"></i>
+                            <div class="text-xs">Comunicados</div>
+                        </div>
+                    </a>
+                    <div class="flex flex-col items-center text-blue-600">
+                        <i class="fas fa-history text-xl"></i>
+                        <div class="text-xs">Historial</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Segundo mockup-->
+        <div class="phone-container">
+            <div class="phone-notch"></div>
+            <div class="phone-screen">                   
+    
+                <!-- Main Content -->
+                <section class="mt-8 px-4 mb-8">
+                    <div class="mb-4 flex">
+                        <i class="fas fa-arrow-left text-xl"></i>
+                        <div class="w-full flex justify-center">
+                            <h1 class="text-2xl font-bold ml-4 text-center">Clinica Marbella</h1>
+                        </div>
+                    </div>
+                    <div class="mb-4 flex flex-col gap-2 bg-gray-100 p-4 rounded-lg">
+                        <p class="text-lg"><span class="font-bold">Horario de recojo:</span> <span>28/12/2024 16:00</span></p>
+                        <p class="text-lg"><span class="font-bold">Horario de entrega:</span> <span>30/12/2024 16:00</span></p>
+                        <p class="text-lg"><span class="font-bold">Estado del servicio:</span> <span>Entregado</span></p>
+                        <p class="text-lg"><span class="font-bold">Guias subidas:</span> <span class="text-blue-600">2/2</span></p>
+                    </div>
+                    <div class="border-t-2 mt-4"></div>
+                    <div class="border-t pt-4 flex flex-col overflow-y-auto">
+                        <p class="text-center text-lg mb-4">Información de recojo</p>
+                        <div class="space-y-4">
+                            <div class="bg-gray-100 p-4 rounded-lg">
+                                <p class="font-bold">Dirección de recojo:</p>
+                                <p>Av. Javier Prado Este 1234, San Isidro, Lima</p>
+                            </div>
+                            <div class="bg-gray-100 p-4 rounded-lg">
+                                <p class="font-bold">Contacto:</p>
+                                <p>Juan Pérez - +51 987 654 321</p>
+                            </div>
+                            <div class="bg-gray-100 p-4 rounded-lg">
+                                <p class="font-bold">Referencia:</p>
+                                <p>Frente al Parque El Olivar, cerca del Hotel Sheraton.</p>
+                            </div>                            
+                        </div>
+                    </div>
+                </section>
+    
+                <!-- Bottom Navigation -->
+                <div class="border-t-2 border-black flex justify-around items-center p-4 absolute bottom-0 w-full bg-white">
+                    <a href="/pickup.html">
+                        <div class="flex flex-col items-center">
+                            <i class="fas fa-list"></i>
+                            <div class="text-xs">Servicios</div>
+                        </div>
+                    </a>
+                    <a href="notifications.html">
+                        <div class="flex flex-col items-center">
+                            <i class="fas fa-envelope text-xl"></i>
+                            <div class="text-xs">Comunicados</div>
+                        </div>
+                    </a>
+                    <div class="flex flex-col items-center text-blue-600">
+                        <i class="fas fa-history text-xl"></i>
+                        <div class="text-xs">Historial</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
