@@ -34,37 +34,54 @@
             transform: translateX(-50%);
             border-radius: 0 0 20px 20px;
         }
+        .card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
     </style>
 </head>
 <body class="bg-gray-100">
     <div class="phone-container">
         <div class="phone-notch"></div>
-        <div class="phone-screen">
-            <div class="flex-1 p-4 mt-8">                
+        <header class="p-4 flex items-center justify-center mt-4 bg-gay-100 text-white">
+            <img src="./assets/regular_grey_logo.png" alt="Logo" class="w-auto h-8">
+        </header>
+        <div class="phone-screen">            
+            <div class="flex-1 p-4">                
                 <div class="space-y-4">
-                    <div class="border rounded-lg p-4">
-                        <h2 class="font-bold text-lg">Falta subir guia de entrega</h2>
-                        <p class="text-sm">Aún no has subido la guía de entrega para el servicio del cliente.</p>
-                        <div class="flex gap-2">
-                            <p class="text-sm mt-2 font-bold">Recojo</p>
-                            <p class="text-sm mt-2">Hoy: 16:00 - 17:00 p. m.</p>
+                    <!-- Notificación 1 -->
+                    <div class="card p-4">
+                        <div class="flex gap-2 items-center">
+                            <i class="far fa-file-alt text-gray-800"></i>
+                            <h2 class="font-bold text-lg text-gray-800">Falta subir guía de entrega</h2>
+                        </div>
+                        <p class="text-sm text-gray-600">Aún no has subido la guía de entrega para el servicio del cliente <span class="font-bold">Club Touring</span>.</p>
+                        <div class="flex gap-2 mt-2">
+                            <p class="text-sm font-bold">Entrega</p>
+                            <p class="text-sm text-gray-600">Hoy: 16:00 - 17:00 p. m.</p>
                         </div>
                     </div>
-                    <div class="border rounded-lg p-4">
-                        <h2 class="font-bold text-lg">Servicio pendiente de confirmar</h2>
-                        <p class="text-sm">Tienes pendiente por confirmar el servicio de cliente.</p>
-                        <div class="flex gap-2">
-                            <p class="text-sm mt-2 font-bold">Recojo</p>
-                            <p class="text-sm mt-2">Hoy: 16:00 - 17:00 p. m.</p>
+                    <!-- Notificación 2 -->
+                    <div class="card p-4">
+                        <div class="flex gap-2 items-center">
+                            <i class="fas fa-exclamation-circle"></i>
+                            <h2 class="font-bold text-lg text-gray-800">Servicio por confirmar</h2>
+                        </div>
+                        <p class="text-sm text-gray-600">Tienes pendiente por confirmar el servicio de cliente <span class="font-bold">Llamita’s Home</span>.</p>
+                        <div class="flex gap-2 mt-2">
+                            <p class="text-sm font-bold">Recojo</p>
+                            <p class="text-sm text-gray-600">Hoy: 09:30 - 10:30 p. m.</p>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="border-t p-4 flex justify-around  border-t absolute bottom-0 w-full bg-white">
+            <!-- Bottom Navigation -->
+            <div class="border-t p-4 flex justify-around absolute bottom-0 w-full bg-white shadow-lg">
                 <a href="./index.html">
                     <div class="flex flex-col items-center">
-                        <i class="fas fa-list"></i>
-                        <span class="text-xs">Servicios</span>
+                        <i class="fas fa-list text-gray-600"></i>
+                        <span class="text-xs text-gray-600">Servicios</span>
                     </div>
                 </a>
                 <div class="flex flex-col items-center text-blue-600">
@@ -73,8 +90,8 @@
                 </div>
                 <a href="./history.html">
                     <div class="flex flex-col items-center">
-                        <i class="fas fa-history"></i>
-                        <span class="text-xs">Historial</span>
+                        <i class="fas fa-history text-gray-600"></i>
+                        <span class="text-xs text-gray-600">Historial</span>
                     </div>
                 </a>
             </div>
