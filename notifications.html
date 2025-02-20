@@ -39,62 +39,263 @@
             border-radius: 12px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
+        .modal-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .camera-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body class="bg-gray-100">
-    <div class="phone-container">
-        <div class="phone-notch"></div>
-        <header class="p-4 flex items-center justify-center mt-4 bg-gay-100 text-white">
-            <img src="./assets/regular_grey_logo.png" alt="Logo" class="w-auto h-8">
-        </header>
-        <div class="phone-screen">            
-            <div class="flex-1 p-4">                
-                <div class="space-y-4">
-                    <!-- Notificación 1 -->
-                    <div class="card p-4">
-                        <div class="flex gap-2 items-center">
-                            <i class="far fa-file-alt text-gray-800"></i>
-                            <h2 class="font-bold text-lg text-gray-800">Falta subir guía de entrega</h2>
+    <div class="grid grid-cols-2">
+
+        <div class="phone-container">
+            <div class="phone-notch"></div>
+            <header class="p-4 flex items-center justify-center mt-4 bg-gay-100 text-white">
+                <img src="./assets/regular_grey_logo.png" alt="Logo" class="w-auto h-8">
+            </header>
+            <div class="phone-screen">            
+                <div class="flex-1 p-4">                
+                    <div class="space-y-4">
+                        <!-- Notificación 1 -->
+                        <div class="card p-4">
+                            <div class="flex gap-2 items-center">
+                                <i class="far fa-file-alt text-gray-800"></i>
+                                <h2 class="font-bold text-lg text-gray-800">Falta subir guía de entrega</h2>
+                            </div>
+                            <p class="text-sm text-gray-600">Aún no has subido la guía de entrega para el servicio del cliente <span class="font-bold">Club Touring</span>.</p>
+                            <div class="flex gap-2 mt-2">
+                                <p class="text-sm font-bold">Entrega</p>
+                                <p class="text-sm text-gray-600">Hoy: 16:00 - 17:00 p. m.</p>
+                            </div>
                         </div>
-                        <p class="text-sm text-gray-600">Aún no has subido la guía de entrega para el servicio del cliente <span class="font-bold">Club Touring</span>.</p>
-                        <div class="flex gap-2 mt-2">
-                            <p class="text-sm font-bold">Entrega</p>
-                            <p class="text-sm text-gray-600">Hoy: 16:00 - 17:00 p. m.</p>
+                        <!-- Notificación 2 -->
+                        <div class="card p-4">
+                            <div class="flex gap-2 items-center">
+                                <i class="fas fa-exclamation-circle"></i>
+                                <h2 class="font-bold text-lg text-gray-800">Servicio por confirmar</h2>
+                            </div>
+                            <p class="text-sm text-gray-600">Tienes pendiente por confirmar el servicio de cliente <span class="font-bold">Llamita’s Home</span>.</p>
+                            <div class="flex gap-2 mt-2">
+                                <p class="text-sm font-bold">Recojo</p>
+                                <p class="text-sm text-gray-600">Hoy: 09:30 - 10:30 p. m.</p>
+                            </div>
                         </div>
                     </div>
-                    <!-- Notificación 2 -->
-                    <div class="card p-4">
-                        <div class="flex gap-2 items-center">
-                            <i class="fas fa-exclamation-circle"></i>
-                            <h2 class="font-bold text-lg text-gray-800">Servicio por confirmar</h2>
+                </div>
+                <!-- Bottom Navigation -->
+                <div class="border-t p-4 flex justify-around absolute bottom-0 w-full bg-white shadow-lg">
+                    <a href="./index.html">
+                        <div class="flex flex-col items-center">
+                            <i class="fas fa-list text-gray-600"></i>
+                            <span class="text-xs text-gray-600">Servicios</span>
                         </div>
-                        <p class="text-sm text-gray-600">Tienes pendiente por confirmar el servicio de cliente <span class="font-bold">Llamita’s Home</span>.</p>
-                        <div class="flex gap-2 mt-2">
-                            <p class="text-sm font-bold">Recojo</p>
-                            <p class="text-sm text-gray-600">Hoy: 09:30 - 10:30 p. m.</p>
+                    </a>
+                    <div class="flex flex-col items-center text-blue-600">
+                        <div class="relative">
+                            <div class="absolute bg-white rounded-full left-0 border-2 w-[20px] h-[20px] flex justify-center items-center">
+                                <span class="text-[10px]">2</span>
+                            </div>
+                        </div>
+                        <i class="fas fa-envelope"></i>
+                        <span class="text-xs">Comunicados</span>
+                    </div>
+                    <a href="./history.html">
+                        <div class="flex flex-col items-center">
+                            <i class="fas fa-history text-gray-600"></i>
+                            <span class="text-xs text-gray-600">Historial</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="phone-container">
+            <div class="phone-notch"></div>
+            <header class="p-4 flex items-center justify-center mt-4 bg-gay-100 text-white">
+                <img src="./assets/regular_grey_logo.png" alt="Logo" class="w-auto h-8">
+            </header>
+            <div class="phone-screen">            
+                <div class="flex-1 p-4">                
+                    <div class="space-y-4">
+                        <!-- Notificación 1 -->
+                        <div class="card p-4">
+                            <div class="flex gap-2 items-center">
+                                <i class="far fa-file-alt text-gray-800"></i>
+                                <h2 class="font-bold text-lg text-gray-800">Falta subir guía de entrega</h2>
+                            </div>
+                            <p class="text-sm text-gray-600">Aún no has subido la guía de entrega para el servicio del cliente <span class="font-bold">Club Touring</span>.</p>
+                            <div class="flex gap-2 mt-2">
+                                <p class="text-sm font-bold">Entrega</p>
+                                <p class="text-sm text-gray-600">Hoy: 16:00 - 17:00 p. m.</p>
+                            </div>
+                        </div>
+                        <!-- Notificación 2 -->
+                        <div class="card p-4">
+                            <div class="flex gap-2 items-center">
+                                <i class="fas fa-exclamation-circle"></i>
+                                <h2 class="font-bold text-lg text-gray-800">Servicio por confirmar</h2>
+                            </div>
+                            <p class="text-sm text-gray-600">Tienes pendiente por confirmar el servicio de cliente <span class="font-bold">Llamita’s Home</span>.</p>
+                            <div class="flex gap-2 mt-2">
+                                <p class="text-sm font-bold">Recojo</p>
+                                <p class="text-sm text-gray-600">Hoy: 09:30 - 10:30 p. m.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Bottom Navigation -->
+                <div class="border-t p-4 flex justify-around absolute bottom-0 w-full bg-white shadow-lg">
+                    <a href="./index.html">
+                        <div class="flex flex-col items-center">
+                            <i class="fas fa-list text-gray-600"></i>
+                            <span class="text-xs text-gray-600">Servicios</span>
+                        </div>
+                    </a>
+                    <div class="flex flex-col items-center text-blue-600">
+                        <i class="fas fa-envelope"></i>
+                        <span class="text-xs">Comunicados</span>
+                    </div>
+                    <a href="./history.html">
+                        <div class="flex flex-col items-center">
+                            <i class="fas fa-history text-gray-600"></i>
+                            <span class="text-xs text-gray-600">Historial</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="modal-overlay">
+                    <div class="flex justify-between bg-white w-[80%] h-[80%] rounded-lg">
+                        <div class="relative flex justify-center w-full">
+                            <div class="absolute bottom-[5rem] border-t-2 w-full"></div>
+                            <div class="absolute bottom-0">
+                                <div class="w-full">
+                                    <i class="fas fa-camera camera-icon text-blue-600"></i>       
+                                </div>             
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- Bottom Navigation -->
-            <div class="border-t p-4 flex justify-around absolute bottom-0 w-full bg-white shadow-lg">
-                <a href="./index.html">
-                    <div class="flex flex-col items-center">
-                        <i class="fas fa-list text-gray-600"></i>
-                        <span class="text-xs text-gray-600">Servicios</span>
+        </div>
+        <div class="phone-container">
+            <div class="phone-notch"></div>
+            <header class="p-4 flex items-center justify-center mt-4 bg-gay-100 text-white">
+                <img src="./assets/regular_grey_logo.png" alt="Logo" class="w-auto h-8">
+            </header>
+            <div class="phone-screen">            
+                <div class="flex-1 p-4">                
+                    <div class="space-y-4">
+                        <!-- Notificación 1 -->
+                        <div class="card p-4">
+                            <div class="flex gap-2 items-center">
+                                <i class="far fa-file-alt text-gray-800"></i>
+                                <h2 class="font-bold text-lg text-gray-800">Falta subir guía de entrega</h2>
+                            </div>
+                            <p class="text-sm text-gray-600">Aún no has subido la guía de entrega para el servicio del cliente <span class="font-bold">Club Touring</span>.</p>
+                            <div class="flex gap-2 mt-2">
+                                <p class="text-sm font-bold">Entrega</p>
+                                <p class="text-sm text-gray-600">Hoy: 16:00 - 17:00 p. m.</p>
+                            </div>
+                        </div>
+                        <!-- Notificación 2 -->
+                        <div class="card p-4">
+                            <div class="flex gap-2 items-center">
+                                <i class="fas fa-exclamation-circle"></i>
+                                <h2 class="font-bold text-lg text-gray-800">Servicio por confirmar</h2>
+                            </div>
+                            <p class="text-sm text-gray-600">Tienes pendiente por confirmar el servicio de cliente <span class="font-bold">Llamita’s Home</span>.</p>
+                            <div class="flex gap-2 mt-2">
+                                <p class="text-sm font-bold">Recojo</p>
+                                <p class="text-sm text-gray-600">Hoy: 09:30 - 10:30 p. m.</p>
+                            </div>
+                        </div>
                     </div>
-                </a>
-                <div class="flex flex-col items-center text-blue-600">
-                    <i class="fas fa-envelope"></i>
-                    <span class="text-xs">Comunicados</span>
                 </div>
-                <a href="./history.html">
-                    <div class="flex flex-col items-center">
-                        <i class="fas fa-history text-gray-600"></i>
-                        <span class="text-xs text-gray-600">Historial</span>
+                <!-- Bottom Navigation -->
+                <div class="border-t p-4 flex justify-around absolute bottom-0 w-full bg-white shadow-lg">
+                    <a href="./index.html">
+                        <div class="flex flex-col items-center">
+                            <i class="fas fa-list text-gray-600"></i>
+                            <span class="text-xs text-gray-600">Servicios</span>
+                        </div>
+                    </a>
+                    <div class="flex flex-col items-center text-blue-600">
+                        <i class="fas fa-envelope"></i>
+                        <span class="text-xs">Comunicados</span>
                     </div>
-                </a>
+                    <a href="./history.html">
+                        <div class="flex flex-col items-center">
+                            <i class="fas fa-history text-gray-600"></i>
+                            <span class="text-xs text-gray-600">Historial</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="modal-overlay">
+                    <div class="flex justify-between bg-white w-[80%] h-[80%] rounded-lg">
+                        <div class="flex flex-col gap-2 justify-center items-center h-full w-full">
+                            <i class="fas fa-check-circle text-green-300 text-[80px]"></i>  
+                            <span>Guia subida correctamente</span>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </div>
+        <div class="phone-container">
+            <div class="phone-notch"></div>
+            <header class="p-4 flex items-center justify-center mt-4 bg-gay-100 text-white">
+                <img src="./assets/regular_grey_logo.png" alt="Logo" class="w-auto h-8">
+            </header>
+            <div class="phone-screen">            
+                <div class="flex-1 p-4">                
+                    <div class="space-y-4">
+                        <!-- Notificación 1 -->                                                
+                        <div class="card p-4">
+                            <div class="flex gap-2 items-center">
+                                <i class="fas fa-exclamation-circle"></i>
+                                <h2 class="font-bold text-lg text-gray-800">Servicio por confirmar</h2>
+                            </div>
+                            <p class="text-sm text-gray-600">Tienes pendiente por confirmar el servicio de cliente <span class="font-bold">Llamita’s Home</span>.</p>
+                            <div class="flex gap-2 mt-2">
+                                <p class="text-sm font-bold">Recojo</p>
+                                <p class="text-sm text-gray-600">Hoy: 09:30 - 10:30 p. m.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Bottom Navigation -->
+                <div class="border-t p-4 flex justify-around absolute bottom-0 w-full bg-white shadow-lg">
+                    <a href="./index.html">
+                        <div class="flex flex-col items-center">
+                            <i class="fas fa-list text-gray-600"></i>
+                            <span class="text-xs text-gray-600">Servicios</span>
+                        </div>
+                    </a>
+                    <div class="flex flex-col items-center text-blue-600">
+                        <div class="relative">
+                            <div class="absolute bg-white rounded-full left-0 border-2 w-[20px] h-[20px] flex justify-center items-center">
+                                <span class="text-[10px]">1</span>
+                            </div>
+                        </div>
+                        <i class="fas fa-envelope"></i>
+                        <span class="text-xs">Comunicados</span>
+                    </div>
+                    <a href="./history.html">
+                        <div class="flex flex-col items-center">
+                            <i class="fas fa-history text-gray-600"></i>
+                            <span class="text-xs text-gray-600">Historial</span>
+                        </div>
+                    </a>
+                </div>
+            </div>            
         </div>
     </div>
 </body>
