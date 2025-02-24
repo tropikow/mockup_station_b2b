@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recojo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .phone-container {
+            width: 375px; /* Ancho de un iPhone X */
+            height: 812px; /* Alto de un iPhone X */
+            border: 16px solid black;
+            border-radius: 36px;
+            overflow: hidden;
+            position: relative;
+            background: white;
+            margin: 50px auto;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            overflow-y: auto;
+            background: white;
+        }
+        .phone-notch {
+            width: 60%;
+            height: 30px;
+            background: black;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 0 0 20px 20px;
+        }
+        .modal-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 80%;
+            height: 80%;            
+        }
+        .camera-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        .btn-primary {
+            background-color: #3B82F6; /* Azul Tailwind */
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #2563EB; /* Azul más oscuro al hacer hover */
+        }
+        .card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }       
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="grid grid-cols-2">
+        <!-- Primer mockup -->
+        <div class="phone-container">
+            <div class="phone-notch"></div>
+            <header class="pt-8 pl-2 pb-2 flex bg-gray-600 text-white">
+                <h2 class="text-2xl font-semibold">JOS: Servicios</h2>
+            </header>
+            <div class="phone-screen">                
+                <main class="flex bg-gray-100 h-[90%] p-4">
+                    <section class="flex flex-col justify-center items-center w-full gap-8">                        
+                        <div class="card p-6 text-center w-full cursor-pointer">
+                            <h3 class="font-semibold text-xl">Recojos</h3>                            
+                        </div>
+                        <div class="card p-6 text-center w-full cursor-pointer">
+                            <h3 class="font-semibold text-xl">Entregas</h3>                            
+                        </div>                        
+                    </section>                    
+                </main>
+                <footer class="p-4 flex justify-around border-t absolute bottom-0 w-full bg-white shadow-lg">
+                    <div class="flex flex-col items-center text-blue-600">
+                        <i class="fas fa-list"></i>
+                        <span class="text-xs">Servicios</span>
+                    </div>
+                    <a href="./notifications.html">
+                        <div class="flex flex-col items-center">
+                            <i class="fas fa-bell"></i>
+                            <span class="text-xs text-gray-600">Notificaciones</span>
+                        </div>
+                    </a>
+                    <a href="./history.html">
+                        <div class="flex flex-col items-center">
+                            <i class="fas fa-history text-gray-600"></i>
+                            <span class="text-xs text-gray-600">Historial</span>
+                        </div>
+                    </a>
+                </footer>
+            </div>
+        </div>
+
+        <!-- Segundo mockup -->         
+        <div class="phone-container">
+            <div class="phone-notch"></div>
+            <header class="pt-8 pl-2 pb-2 flex bg-gray-600 text-white">
+                <h2 class="text-2xl font-semibold">JOS: Servicios</h2>
+            </header>
+            <div class="phone-screen">
+                <header class="p-4 flex items-center">
+                    <i class="fas fa-arrow-left text-xl"></i>
+                    <h1 class="ml-4 text-lg font-semibold">Recojos</h1>
+                </header>
+                <main class="flex-1 overflow-y-auto p-4">
+                    <section>
+                        <h2 class="text-lg font-semibold mb-4 text-gray-700">Hoy</h2>
+                        <div class="card bg-orange-200 p-4 mb-4">
+                            <h3 class="font-semibold text-gray-800">Hotel BTH Golf</h3>
+                            <p class="text-sm text-gray-600">20/03/2025 16:00 - 17:00</p>
+                        </div>
+                        <div class="card bg-orange-200 p-4 mb-4">
+                            <h3 class="font-semibold text-gray-800">Clinica Avendaño</h3>
+                            <p class="text-sm text-gray-600">20/03/2025 07:00 - 08:00</p>
+                        </div>
+                        <div class="card bg-red-200 p-4 mb-4 flex justify-between items-center">
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Llamita’s Home</h3>
+                                <p class="text-sm text-gray-600">20/03/2025 09:30 - 10:30</p>
+                            </div>
+                            <i class="fas fa-camera text-xl text-gray-500"></i>
+                        </div>
+                    </section>
+                    <section>
+                        <h2 class="text-lg font-semibold mb-4 text-gray-700">Mañana</h2>
+                        <div class="card bg-red-200 p-4 mb-4 flex justify-between items-center">
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Club Regatas Baños Turcos</h3>
+                                <p class="text-sm text-gray-600">21/03/2025 10:00 - 11:00</p>
+                            </div>
+                            <i class="fas fa-camera text-xl text-gray-500"></i>
+                        </div>
+                    </section>
+                    <section>
+                        <h2 class="text-lg font-semibold mb-4 text-gray-700">48 Hrs</h2>
+                        <div class="card bg-red-200 p-4 mb-4 flex justify-between items-center">
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Clinica San Camilo</h3>
+                                <p class="text-sm text-gray-600">22/03/2025 11:00 - 12:00</p>
+                            </div>
+                            <i class="fas fa-camera text-xl text-gray-500"></i>
+                        </div>
+                        <div class="card bg-red-200 p-4 mb-4 flex justify-between items-center">
+                            <div>
+                                <h3 class="font-semibold text-gray-800">BTH Lima Golf</h3>
+                                <p class="text-sm text-gray-600">22/03/2025 11:00 - 12:00</p>
+                            </div>
+                            <i class="fas fa-camera text-xl text-gray-500"></i>
+                        </div>
+                        <div class="card bg-red-200 p-4 mb-4 flex justify-between items-center">
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Traversina</h3>
+                                <p class="text-sm text-gray-600">03/01/2025 10:00</p>
+                            </div>
+                            <i class="fas fa-camera text-xl text-gray-500"></i>
+                        </div>
+                    </section>
+                </main>
+                <footer class="p-4 flex justify-around border-t absolute bottom-0 w-full bg-white shadow-lg">
+                    <div class="flex flex-col items-center text-blue-600">
+                        <i class="fas fa-list"></i>
+                        <span class="text-xs">Servicios</span>
+                    </div>
+                    <a href="./notifications.html">
+                        <div class="flex flex-col items-center">
+                            <i class="fas fa-bell"></i>
+                            <span class="text-xs text-gray-600">Notificaciones</span>
+                        </div>
+                    </a>
+                    <a href="./history.html">
+                        <div class="flex flex-col items-center">
+                            <i class="fas fa-history text-gray-600"></i>
+                            <span class="text-xs text-gray-600">Historial</span>
+                        </div>
+                    </a>
+                </footer>
+            </div>
+        </div>
+
+        <!-- Tercero mockup con modal de cámara -->
+        <div class="phone-container">
+            <div class="phone-notch"></div>
+            <header class="pt-8 pl-2 pb-2 flex bg-gray-600 text-white">
+                <h2 class="text-2xl font-semibold">JOS: Servicios</h2>
+            </header>
+            <div class="phone-screen">
+                <header class="p-4 flex items-center mt-4">
+                    <i class="fas fa-arrow-left text-xl"></i>
+                    <h1 class="ml-4 text-lg font-semibold">Recojo</h1>
+                </header>
+                <main class="flex-1 overflow-y-auto p-4">
+                    <section>
+                        <h2 class="text-lg font-semibold mb-4 text-gray-700">Hoy</h2>
+                        <div class="card p-4 mb-4">
+                            <h3 class="font-semibold text-gray-800">Hotel BTH Golf</h3>
+                            <p class="text-sm text-gray-600">01/01/2025 16:00</p>
+                        </div>
+                        <div class="card p-4 mb-4">
+                            <h3 class="font-semibold text-gray-800">Hotel Britania</h3>
+                            <p class="text-sm text-gray-600">01/01/2025 16:00</p>
+                        </div>
+                        <div class="card p-4 mb-4 flex justify-between items-center">
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Clinica Impares</h3>
+                                <p class="text-sm text-gray-600">01/01/2025 06:00</p>
+                            </div>
+                            <i class="fas fa-camera text-xl text-blue-600"></i>
+                        </div>
+                    </section>
+                    <section>
+                        <h2 class="text-lg font-semibold mb-4 text-gray-700">Mañana</h2>
+                        <div class="card p-4 mb-4 flex justify-between items-center">
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Clinica Marbella</h3>
+                                <p class="text-sm text-gray-600">02/01/2025 06:00</p>
+                            </div>
+                            <i class="fas fa-camera text-xl text-blue-600"></i>
+                        </div>
+                    </section>
+                    <section>
+                        <h2 class="text-lg font-semibold mb-4 text-gray-700">48 Hrs</h2>
+                        <div class="card p-4 mb-4 flex justify-between items-center">
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Traversina</h3>
+                                <p class="text-sm text-gray-600">03/01/2025 10:00</p>
+                            </div>
+                            <i class="fas fa-camera text-xl text-blue-600"></i>
+                        </div>
+                        <div class="card p-4 mb-4 flex justify-between items-center">
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Traversina</h3>
+                                <p class="text-sm text-gray-600">03/01/2025 10:00</p>
+                            </div>
+                            <i class="fas fa-camera text-xl text-blue-600"></i>
+                        </div>
+                        <div class="card p-4 mb-4 flex justify-between items-center">
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Traversina</h3>
+                                <p class="text-sm text-gray-600">03/01/2025 10:00</p>
+                            </div>
+                            <i class="fas fa-camera text-xl text-blue-600"></i>
+                        </div>
+                    </section>
+                </main>
+                <footer class="p-4 flex justify-around border-t absolute bottom-0 w-full bg-white shadow-lg">
+                    <div class="flex flex-col items-center text-blue-600">
+                        <i class="fas fa-list"></i>
+                        <span class="text-sm">Servicios</span>
+                    </div>
+                    <a href="./notifications.html">
+                        <div class="flex flex-col <i class="fas fa-bell"></i>
+                            <span class="text-sm">Notificaciones</span>
+                        </div>
+                    </a>
+                    <a href="./history.html">
+                        <div class="flex flex-col items-center">
+                            <i class="fas fa-history"></i>
+                            <span class="text-sm">Historial</span>
+                        </div>
+                    </a>
+                </footer>
+            </div>
+            <!-- Ventana modal de cámara -->
+            <div class="modal-overlay">
+                <div class="flex justify-between bg-white w-[80%] h-[80%] rounded-lg">
+                    <div class="relative flex justify-center w-full">
+                        <div class="absolute bottom-[5rem] border-t-2 w-full"></div>
+                        <div class="absolute bottom-0">
+                            <div class="w-full">
+                                <i class="fas fa-camera camera-icon text-blue-600"></i>       
+                            </div>             
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Cuarto mockup -->
+        <div class="phone-container">
+            <div class="phone-notch"></div>
+            <header class="pt-8 pl-2 pb-2 flex bg-gray-600 text-white">
+                <h2 class="text-2xl font-semibold">JOS: Servicios</h2>
+            </header>
+            <div class="phone-screen">
+                <header class="p-4 flex items-center mt-4">
+                    <i class="fas fa-arrow-left text-xl"></i>
+                    <h1 class="ml-4 text-lg font-semibold">Recojo</h1>
+                </header>
+                <main class="flex-1 overflow-y-auto p-4">
+                    <section>
+                        <h2 class="text-lg font-semibold mb-4 text-gray-700">Hoy</h2>
+                        <div class="card p-4 mb-4">
+                            <h3 class="font-semibold text-gray-800">Hotel BTH Golf</h3>
+                            <p class="text-sm text-gray-600">01/01/2025 16:00</p>
+                        </div>
+                        <div class="card p-4 mb-4">
+                            <h3 class="font-semibold text-gray-800">Hotel Britania</h3>
+                            <p class="text-sm text-gray-600">01/01/2025 16:00</p>
+                        </div>
+                        <div class="card p-4 mb-4 flex justify-between items-center">
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Clinica Impares</h3>
+                                <p class="text-sm text-gray-600">01/01/2025 06:00</p>
+                            </div>
+                            <i class="fas fa-camera text-xl text-blue-600"></i>
+                        </div>
+                    </section>
+                    <section>
+                        <h2 class="text-lg font-semibold mb-4 text-gray-700">Mañana</h2>
+                        <div class="card p-4 mb-4 flex justify-between items-center">
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Clinica Marbella</h3>
+                                <p class="text-sm text-gray-600">02/01/2025 06:00</p>
+                            </div>
+                            <i class="fas fa-camera text-xl text-blue-600"></i>
+                        </div>
+                    </section>
+                    <section>
+                        <h2 class="text-lg font-semibold mb-4 text-gray-700">48 Hrs</h2>
+                        <div class="card p-4 mb-4 flex justify-between items-center">
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Traversina</h3>
+                                <p class="text-sm text-gray-600">03/01/2025 10:00</p>
+                            </div>
+                            <i class="fas fa-camera text-xl text-blue-600"></i>
+                        </div>
+                        <div class="card p-4 mb-4 flex justify-between items-center">
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Traversina</h3>
+                                <p class="text-sm text-gray-600">03/01/2025 10:00</p>
+                            </div>
+                            <i class="fas fa-camera text-xl text-blue-600"></i>
+                        </div>
+                        <div class="card p-4 mb-4 flex justify-between items-center">
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Traversina</h3>
+                                <p class="text-sm text-gray-600">03/01/2025 10:00</p>
+                            </div>
+                            <i class="fas fa-camera text-xl text-blue-600"></i>
+                        </div>
+                    </section>
+                </main>
+                <footer class="p-4 flex justify-around border-t absolute bottom-0 w-full bg-white shadow-lg">
+                    <div class="flex flex-col items-center text-blue-600">
+                        <i class="fas fa-list"></i>
+                        <span class="text-sm">Servicios</span>
+                    </div>
+                    <a href="./notifications.html">
+                        <div class="flex flex-col <i class="fas fa-bell"></i>
+                            <span class="text-sm">Notificaciones</span>
+                        </div>
+                    </a>
+                    <a href="./history.html">
+                        <div class="flex flex-col items-center">
+                            <i class="fas fa-history"></i>
+                            <span class="text-sm">Historial</span>
+                        </div>
+                    </a>
+                </footer>
+            </div>
+            <!-- Ventana modal de cámara -->
+            <div class="modal-overlay">
+                <div class="flex justify-between bg-white w-[80%] h-[80%] rounded-lg">
+                    <div class="flex flex-col gap-2 justify-center items-center h-full w-full">
+                        <i class="fas fa-check-circle text-green-300 text-[80px]"></i>  
+                        <span>Guia subida correctamente</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Quinto mockup -->
+        <div class="phone-container">
+            <div class="phone-notch"></div>
+            <header class="pt-8 pl-2 pb-2 flex bg-gray-600 text-white">
+                <h2 class="text-2xl font-semibold">JOS: Servicios</h2>
+            </header>
+            <div class="phone-screen">
+                <header class="p-4 flex items-center">
+                    <i class="fas fa-arrow-left text-xl"></i>
+                    <h1 class="ml-4 text-lg font-semibold">Recojos</h1>
+                </header>
+                <main class="flex-1 overflow-y-auto p-4">
+                    <section>
+                        <h2 class="text-lg font-semibold mb-4 text-gray-700">Hoy</h2>
+                        <div class="card bg-orange-200 p-4 mb-4">
+                            <h3 class="font-semibold text-gray-800">Hotel BTH Golf</h3>
+                            <p class="text-sm text-gray-600">20/03/2025 16:00 - 17:00</p>
+                        </div>
+                        <div class="card bg-orange-200 p-4 mb-4">
+                            <h3 class="font-semibold text-gray-800">Clinica Avendaño</h3>
+                            <p class="text-sm text-gray-600">20/03/2025 07:00 - 08:00</p>
+                        </div>
+                        <div class="card bg-orange-200 p-4 mb-4 flex justify-between items-center">
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Llamita’s Home</h3>
+                                <p class="text-sm text-gray-600">20/03/2025 09:30 - 10:30</p>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <h2 class="text-lg font-semibold mb-4 text-gray-700">Mañana</h2>
+                        <div class="card bg-red-200 p-4 mb-4 flex justify-between items-center">
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Club Regatas Baños Turcos</h3>
+                                <p class="text-sm text-gray-600">21/03/2025 10:00 - 11:00</p>
+                            </div>
+                            <i class="fas fa-camera text-xl text-gray-500"></i>
+                        </div>
+                    </section>
+                    <section>
+                        <h2 class="text-lg font-semibold mb-4 text-gray-700">48 Hrs</h2>
+                        <div class="card bg-red-200 p-4 mb-4 flex justify-between items-center">
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Clinica San Camilo</h3>
+                                <p class="text-sm text-gray-600">22/03/2025 11:00 12:00</p>
+                            </div>
+                            <i class="fas fa-camera text-xl text-gray-500"></i>
+                        </div>
+                        <div class="card bg-red-200 p-4 mb-4 flex justify-between items-center">
+                            <div>
+                                <h3 class="font-semibold text-gray-800">BTH Lima Golf</h3>
+                                <p class="text-sm text-gray-600">22/03/2025 11:00 - 12:00</p>
+                            </div>
+                            <i class="fas fa-camera text-xl text-gray-500"></i>
+                        </div>
+                        <div class="card bg-red-200 p-4 mb-4 flex justify-between items-center">
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Traversina</h3>
+                                <p class="text-sm text-gray-600">03/01/2025 10:00 - 11:00</p>
+                            </div>
+                            <i class="fas fa-camera text-xl text-gray-500"></i>
+                        </div>
+                    </section>
+                </main>
+                <footer class="p-4 flex justify-around border-t absolute bottom-0 w-full bg-white shadow-lg">
+                    <div class="flex flex-col items-center text-blue-600">
+                        <i class="fas fa-list"></i>
+                        <span class="text-xs">Servicios</span>
+                    </div>
+                    <a href="./notifications.html">
+                        <div class="flex flex-col items-center">
+                            <i class="fas fa-bell"></i>
+                            <span class="text-xs text-gray-600">Notificaciones</span>
+                        </div>
+                    </a>
+                    <a href="./history.html">
+                        <div class="flex flex-col items-center">
+                            <i class="fas fa-history text-gray-600"></i>
+                            <span class="text-xs text-gray-600">Historial</span>
+                        </div>
+                    </a>
+                </footer>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
